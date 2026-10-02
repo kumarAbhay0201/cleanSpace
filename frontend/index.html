@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CleanSpace</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="stylesheet" href="/static/css/recycle.css">
+  <link rel="stylesheet" href="/static/css/ui-update.css">
+  <link rel="stylesheet" href="/static/css/button-order.css">
+</head>
+<body>
+  <div class="app-shell">
+    <main class="main-content">
+      <header class="topbar"><div><p class="eyebrow">WINDOWS UTILITY</p><h1 id="page-title">Your system, clearly.</h1></div><button class="icon-button" aria-label="Open settings">⚙</button></header>
+      <section id="dashboard" class="view active-view">
+        <div class="hero-row"><article class="hero-tile storage-tile"><div><p class="eyebrow">STORAGE OVERVIEW</p><h2 id="storage-title">Checking your drive...</h2><p class="muted" id="storage-subtitle">Loading storage information</p></div><div><strong class="storage-percent-large" id="storage-percent">--</strong><p class="muted">used</p></div></article><article class="hero-tile recycle-tile" id="recycle-tile" tabindex="0" aria-label="Scan Recycle Bin"><div><p class="eyebrow">RECYCLE BIN</p><h2>Keep the space or empty it</h2><span class="recycle-result" id="recycle-size">Not scanned</span><span class="scan-hint" id="recycle-summary">Scan to calculate space</span><div class="recycle-controls"><button class="primary-button" id="recycle-scan-cta" type="button">Scan Recycle Bin</button><button class="primary-button" id="recycle-clean-cta" type="button" hidden>Cleanup</button></div></div><span class="dustbin-figure" aria-hidden="true">🗑</span></article></div>
+        <div class="summary-grid"><article class="summary-card accent"><div><p class="eyebrow">POTENTIALLY CLEANABLE</p><strong id="cleanable-size">0 B</strong><p class="muted" id="scan-message">Run a scan to analyze temporary files.</p></div><div><button class="primary-button" id="scan-button">Scan now <span>→</span></button> <button class="primary-button" id="clean-button" disabled>Clean selected</button></div></article><article class="summary-card"><p class="eyebrow">LAST SCAN</p><strong id="file-count">—</strong><p class="muted">files found</p><div class="mini-line"><span id="last-scan-status">Not scanned yet</span><span class="status-dot"></span></div></article></div>
+        <div class="section-heading"><div><p class="eyebrow">KNOWN TARGETS</p><h2>Safe places to clean</h2></div><span class="muted">MVP · 1 target enabled</span></div>
+        <div class="category-grid" id="category-grid"><div class="empty-state">Scan to inspect approved cleanup locations.</div></div>
+        <div class="review-panel"><p class="eyebrow">CLEANUP SCAN EVIDENCE</p><h2>How the total is calculated</h2><p class="muted">Review the entries below before selecting a cleanup category. The list is limited to the first 100 entries for responsiveness.</p><ul class="review-list" id="review-list"><li>Run a scan to see the individual entries.</li></ul></div>
+      </section>
+      <section id="cleanup" class="view"><div class="section-heading"><div><p class="eyebrow">CLEANUP QUEUE</p><h2>Review before anything changes</h2></div></div><div class="cleanup-panel"><p class="muted">Select categories from the dashboard after a scan. CleanSpace never deletes during scanning.</p><button class="primary-button" data-view="dashboard">Back to dashboard <span>→</span></button></div></section>
+      <section id="recycle" class="view"><div class="section-heading"><div><p class="eyebrow">RECYCLE BIN REVIEW</p><h2>Review what is taking space</h2><p class="muted">Windows reports this total. Nothing is emptied until you confirm.</p></div><button class="primary-button" id="recycle-scan-button">Scan Recycle Bin</button></div><div class="recycle-card"><div><p class="eyebrow">CURRENT CONTENTS</p><strong id="recycle-detail-size">Not scanned</strong><p class="muted" id="recycle-detail-count">Click scan to inspect the bin.</p></div><div class="recycle-actions"><button class="primary-button" data-view="dashboard">Keep the space</button><button class="danger-button" id="empty-recycle-button" disabled>Empty Recycle Bin</button></div></div></section>
+      <section id="settings" class="view"><div class="section-heading"><div><p class="eyebrow">PREFERENCES</p><h2>Settings</h2></div></div><div class="settings-list"><label><span>Theme</span><select><option>Dark</option><option>Light</option><option>System</option></select></label><label><span>Show cleanup notifications</span><input type="checkbox" checked></label></div></section>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <div class="cleanup-modal" id="cleanup-modal" hidden><div class="cleanup-dialog" role="dialog" aria-modal="true" aria-labelledby="cleanup-title"><p class="eyebrow">RECYCLE BIN CLEANUP</p><h2 id="cleanup-title">Are you sure?</h2><p class="muted" id="cleanup-amount">This will permanently delete <strong id="cleanup-confirm-size">the scanned Recycle Bin contents</strong>. Nothing can be restored afterward.</p><div class="modal-actions"><button class="secondary-button" id="cancel-cleanup">Keep the space</button><button class="danger-button" id="confirm-cleanup">Empty Recycle Bin</button></div></div></div>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
