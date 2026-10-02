@@ -31,9 +31,9 @@ The output is `dist\CleanSpace.exe`. It starts a local server, opens the dashboa
 
 ## GitHub Pages download page
 
-The repository root contains a static `index.html` intended for GitHub Pages. Before publishing, replace `YOUR_USERNAME/clean-space` in that file with the real GitHub repository path. Publish from the repository root using **Settings → Pages → Deploy from a branch → main / root**.
+The repository root contains a static `index.html` intended for GitHub Pages. Publish from the repository root using **Settings → Pages → Deploy from a branch → main / root**.
 
-Upload `dist\CleanSpace.exe` to a GitHub Release named `v0.1.0`. The page download buttons point to the latest release asset at `releases/latest/download/CleanSpace.exe`.
+The page download buttons point directly to `dist\CleanSpace.exe` on the `main` branch. For future releases, prefer attaching the executable to a GitHub Release and changing the page link to the release asset URL.
 ## Security
 
 The browser sends cleanup target IDs, never paths. The backend resolves approved locations and checks every item remains inside its approved root. See [docs/security.md](docs/security.md).
