@@ -6,6 +6,8 @@ CleanSpace is a transparent, conservative Windows cleanup utility built with Pyt
 
 The first slice supports scanning the current user's temporary directory and a dry-run or confirmed cleanup through approved target IDs. Scanning never deletes files. The cleaner skips symlinks, validates resolved paths, handles filesystem failures, and reports skipped items.
 
+Packaged builds protect their temporary PyInstaller runtime directory from cleanup. This is required because the executable serves its dashboard assets from that extracted directory while it is running.
+
 ## Development
 
 ```powershell
